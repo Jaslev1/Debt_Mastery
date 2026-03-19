@@ -1,25 +1,19 @@
 
 'use client'
-import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function Intake() {
-  const [data, setData] = useState({})
+  const [amount, setAmount] = useState('')
   const router = useRouter()
 
   return (
-    <div className="p-6 max-w-md mx-auto">
-      <input placeholder="Debt amount"
-        onChange={e => setData({ ...data, amount: e.target.value })} />
-      <button
-        onClick={() => {
-          localStorage.setItem('intake', JSON.stringify(data))
-          router.push('/results')
-        }}
-        className="mt-4 bg-black text-white px-4 py-2"
-      >
-        Continue
-      </button>
+    <div style={{padding:20}}>
+      <input placeholder="Debt amount" onChange={e=>setAmount(e.target.value)} />
+      <button onClick={()=>{
+        localStorage.setItem('amount', amount)
+        router.push('/results')
+      }}>Continue</button>
     </div>
   )
 }

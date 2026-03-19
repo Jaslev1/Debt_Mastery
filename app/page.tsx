@@ -1,11 +1,10 @@
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <div className="text-center space-y-6">
-        <h1 className="text-3xl font-bold">Debt Relief</h1>
-        <p>Start your plan</p>
-        <a href="/intake" className="bg-black text-white px-4 py-2">Start</a>
+    <main style={{display:'flex',height:'100vh',alignItems:'center',justifyContent:'center'}}>
+      <div style={{textAlign:'center'}}>
+        <h1>Debt Plan</h1>
+        <a href="/intake">Start</a>
       </div>
     </main>
   )
