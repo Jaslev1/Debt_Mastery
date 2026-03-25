@@ -1,19 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/pdf.js",
-      "use": "@vercel/node"
+  "functions": {
+    "api/pdf.js": {
+      "memory": 1024,
+      "maxDuration": 60
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  }
 }
